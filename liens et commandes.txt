@@ -11,3 +11,5 @@ Toutefois certaines approches sont incompatibles avec Jquery qui vont manipuler 
 Jquery manipulant directement le DOM, il viendra cours-circuiter ces Frameworks.
 
 Jquery est du javascript, donc pas besoin de compilateur.
+
+convention: les variables jQuery commencent par $

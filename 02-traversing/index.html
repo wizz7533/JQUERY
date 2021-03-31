@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing</title>
+</head>
+
+<body>
+    <h1>Traversing</h1>
+
+    <article>
+        <h1>L'API jQuery pour parcourir le DOM</h1>
+        <p>Lorem ipsum dolor sit amet, <strong>consectetur </strong>adipisicing elit. Natus rerum ducimus quidem eius sed est, libero dicta cupiditate reiciendis repudiandae, minus eum delectus quo molestias voluptatibus, tenetur eligendi. Expedita, alias.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus rerum ducimus quidem eius sed est, libero dicta cupiditate reiciendis repudiandae, minus eum delectus quo molestias voluptatibus, tenetur eligendi. Expedita, alias.</p>
+    </article>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // récupération de la collection de tous les éléments enfants
+            // de chaque élément de ma collection de départ
+            const $test = $('article').children() // ici, tous les enfants de tous les articles
+                // récupération de la collection de tous les éléments parents
+                // de chaque élément de ma collection de départ
+                .parent() // => je récupère les parents de .children() donc ici les articles ( tous les articles, mais que les articles)
+                .prev() // on va récupérer la collection de tous les prédécesseurs => ici, on récupèrera les <h1>
+                .next() // on va récupérer la collection de tous les successeurs => ici, on récupèrera les <script>
+                // possibilité d'ajouter un filtre supplémentaire avec la syntaxe des sélecteurs
+                .children('p') // => ici par exemple les <p> dans article.
+                .parents() // récupère tous les ascendants (jusqu'à l'élément racine)
+                .find('*') // tous les descendants
+                .closest('article') // remonte sur l'article le plus proche parmi les ascendants
+
+            console.log($test);
+        });
+    </script>
+</body>
+
+</html>
