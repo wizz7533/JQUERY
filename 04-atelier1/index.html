@@ -59,18 +59,80 @@
         });
 
         $(function() {
-            $('span').next().hide();
-        });
-        $(function() {
             $("span")
-                .hover(function() {
-                    $(this)
-                        .toggleClass("active")
-                        .next()
-                        .stop(true, true)
-                        .slideToggle();
-                });
+                .parent()
+                .hover(
+                    (function() {
+                        $(this)
+                            .children('ul')
+                            .show()
+
+                    }),
+                    (function() {
+                        $(this)
+                            .children('ul')
+                            .hide()
+                    })
+                )
+                // .children()
+                // .click();
         });
+
+        // let openedSubMenu = null;
+
+        // $(function(){
+        //     const $menu = $('.menu');
+        //     $menu.find('ul').hide();
+        //     $menu.find('span').click(function(){
+        //         const $subMenu = $(this).next();
+
+        //         if (openedSubMenu === this) {
+        //             $subMenu.hide();
+        //             openedSubMenu = null;
+        //             return;
+        //         }
+
+        //         $menu.find('ul').hide();
+        //         $subMenu.show();
+        //         openedSubMenu = this;
+        //     });
+        // });
+
+
+
+        // let openedSubMenu = null;
+
+        // $(function(){
+        //     const $menu = $('.menu');
+        //     $menu.find('ul').hide();
+        //     $menu.find('span').click(function(){
+        //         const $subMenu = $(this).next();
+
+        //         if (openedSubMenu === this) {
+        //             $subMenu.hide();
+        //              const e = $.Event('menu.close', {
+        //                  target: this,
+        //              });     
+        //             $(this).trigger(e);
+        //             return;
+        //         }
+
+        //         $menu.find('ul').hide();
+        //         $subMenu.show();
+        //         const e = $.Event('menu.open', {
+        //                  target: this,
+        //              });
+        //         $(this).trigger(e);
+        //     });
+        //      $menu.on('menu.open', function(e) {
+        //          openedSubMenu = e.target;
+        //     });
+        //
+        //      $menu.on('menu.close', function() {
+        //          openedSubMenu = null;
+        //     });
+        //
+        // });
     </script>
 </body>
 
