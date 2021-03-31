@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects</title>
+</head>
+
+<body>
+    <h1>Effects</h1>
+
+    <article>
+        <h1>L'API jQuery pour parcourir le DOM</h1>
+        <p>Lorem ipsum dolor sit amet, <strong>consectetur </strong>adipisicing elit. Natus rerum ducimus quidem eius sed est, libero dicta cupiditate reiciendis repudiandae, minus eum delectus quo molestias voluptatibus, tenetur eligendi. Expedita, alias.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus rerum ducimus quidem eius sed est, libero dicta cupiditate reiciendis repudiandae, minus eum delectus quo molestias voluptatibus, tenetur eligendi. Expedita, alias.</p>
+    </article>
+    <button>Afficher</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('article').hide() // $('article').show(); pour afficher
+                // attache un écouteur d'évènement à chaque élément de la collection
+                .next('button').click(function() {
+                    // this est l'élement sur lequel est attaché l'écouteur
+                    // $(this) est un objet jQuery construit autour de this
+                    $(this).prev().show();
+                });
+            // autre possibilité : fadeIn /fadeOut / slideIn / slideOut
+            // affiche masque avec des animations
+        });
+    </script>
+</body>
+
+</html>
