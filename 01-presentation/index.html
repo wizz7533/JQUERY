@@ -3,17 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentation</title>
-    <link rel="stylesheet" href="">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <title>Présentation</title>
 </head>
 
 <body>
     <h1>Présentation</h1>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        // $(function(){ ... }) raccourcis vers:
+        // $(document).ready(function(){ ... })
+        // exécute la fonction "callback" une fois le document chargé
+        $(function() {
+            // $(<string>): construit une collection d'éléments jQuery
+            // autour d'un sélecteur
+            // => pas besoin de faire les parcours avec for..of
+            $('h1')
+                // .css(<mapping>): applique l'ensembles des couples propriétés de styles
+                // à chacun des éléments de la collection
+                .css({
+                    backgroundColor: 'aliceblue'
+                });
+        });
     </script>
 </body>
 
