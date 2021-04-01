@@ -1,0 +1,15 @@
+.menu {
+    display: flex;
+}
+
+.menu>li {
+    position: relative;
+    min-width: 12ch;
+    list-style: none;
+}
+
+.menu ul {
+    position: absolute;
+    left: O;
+    right: 0;
+}
